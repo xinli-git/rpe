@@ -1,4 +1,4 @@
-# rpe
+# rpe, genotype imputation and phasing
 
 We used Beagle 4.1 (downloaded Nov 2016) to perform genotype imputation and phasing. Genotypes were imputed and phased according to 1000 Genomes Project phase 3 reference panel. Before imputation and phasing, we filtered the original vcf file to only bi-allelic SNP sites on autosomes and removed sites with more than 5% missing genotypes. We also re-coded the vcf based on the reference and alternative allele designation of 1000 Genomes Project phase 3 reference panel using the conform-gt program which is provided together with the Beagle tool.
 
