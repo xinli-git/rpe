@@ -5,7 +5,8 @@ We used Beagle 4.1 (downloaded Nov 2016) to perform genotype imputation and phas
 
 ### filtering for bi-allelic SNPs
 ````
-
+vcftools --vcf rpe.merged.missing5e-2.autosome.vcf --min-alleles 2 --max-alleles 2 --recode --stdout | awk '$4 ~ /[ATCG]/ || $1 ~ /#/' | awk 'BEGIN{pos=0; rs=0} ($2 == pos) {} (($2 != pos && $3 != rs)|| $1 ~ /#/) {print; pos = $2; rs = $3}' 
+vcf-merge --remove-duplicates --collapse any rpe.merged.missing5e-2.autosome.biSNPs.vcf.gz
 ````
 
 
